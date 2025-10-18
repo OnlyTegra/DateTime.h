@@ -44,15 +44,13 @@ int DateTime::getYear() {
 }
 
 void DateTime::setDay(int d) {
-
     try {
-        if (d <= 0 || d > 31) {
-            throw std::string("Errore: giorni impostati su dati non validi!");
+        int maxGiorni = GiorniInMese();
+        if (d <= 0 || d > maxGiorni) {
+            throw std::string("Errore: giorno non valido per il mese selezionato!");
         }
-
         giorno = d;
-    }
-    catch (const std::string& errore) {
+    } catch (const std::string& errore) {
         std::cout << errore << std::endl;
     }
 }
@@ -125,4 +123,28 @@ std::string DateTime::ToString()
     }
 
     return g + "/" + m + "/" + a;
+}
+
+bool DateTime::isLeapYear()
+{
+    if (anno % 4 == 0 && (anno % 100 != 0 || anno % 400 == 0)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+int DateTime::GiorniInMese()
+{
+    switch (mese) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            return isLeapYear() ? 29 : 28;
+        default:
+            return 0; // mese non valido
+    }
 }

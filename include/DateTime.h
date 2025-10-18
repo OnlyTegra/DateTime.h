@@ -11,6 +11,8 @@ private:
     int mese;
     int anno;
 
+    int GiorniInMese();
+
 public:
 
     //Property
@@ -29,6 +31,8 @@ public:
 
     //Metodi
     std::string ToString();
+    bool isLeapYear();
+
 
     //Metodi statici
     static DateTime Now();
