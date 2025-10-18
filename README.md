@@ -38,7 +38,13 @@ Inoltre si può ottenere la data del computer.
 DateTime dt = DateTime::now();
 ```
 
-E infine, utilizzando la funzione apposita, si può convertire in stringa la data.
+Si può anche controllare se l'anno è bisestile.
+
+```
+bool bisestile = dt.isLeapYear();
+```
+
+Utilizzando la funzione apposita, si può convertire in stringa la data.
 
 
 ```
