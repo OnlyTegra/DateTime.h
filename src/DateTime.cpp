@@ -15,7 +15,20 @@ DateTime DateTime::Now() {
     dt.setYear(now->tm_year + 1900);
 
     return dt;
+}
 
+DateTime::DateTime() {
+
+    giorno = 1;
+    mese = 1;
+    anno = 1970;
+}
+
+DateTime::DateTime(int d, int m, int y) {
+
+    giorno = d;
+    mese = m;
+    anno = y;
 }
 
 int DateTime::getDay() {

@@ -5,23 +5,15 @@
 
 class DateTime {
 private:
+
+    //proprieta
     int giorno;
     int mese;
     int anno;
 
 public:
-    static DateTime Now();
-    DateTime() {
-        giorno = 1;
-        mese = 1;
-        anno = 1;
-    };
 
-    DateTime (int G,int M, int A) {
-        giorno = G;
-        mese = M;
-        anno = A;
-    }
+    //Property
     int getDay();
     int getMonth();
     int getYear();
@@ -30,7 +22,16 @@ public:
     void setMonth(int m);
     void setYear(int y);
 
+    //Costruttori
+    DateTime();
+
+    DateTime(int d, int m, int y);
+
+    //Metodi
     std::string ToString();
+
+    //Metodi statici
+    static DateTime Now();
 
 };
 
