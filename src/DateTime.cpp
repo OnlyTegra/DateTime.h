@@ -34,39 +34,39 @@ void DateTime::setDay(int d) {
 
     try {
         if (d <= 0 || d > 31) {
-            throw 69;
+            throw std::string("Errore: giorni impostati su dati non validi!");
         }
 
         giorno = d;
     }
-    catch (int errore) {
-        std::cout << "Errore" << std::endl;
+    catch (const std::string& errore) {
+        std::cout << errore << std::endl;
     }
 }
 
 void DateTime::setMonth(int m) {
     try {
         if (m <= 0 || m > 12) {
-            throw 69;
+            throw std::string("Errore: mesi impostati su dati non validi!");
         }
 
         mese = m;
     }
-    catch (int errore) {
-        std::cout << "Errore" << std::endl;
+    catch (const std::string& errore) {
+        std::cout << errore << std::endl;
     }
 }
 
 void DateTime::setYear(int y) {
     try {
         if (y <= 0 || y > 3000) {
-            throw 69;
+            throw std::string("Errore: anni impostati su dati non validi!");
         }
 
         anno = y;
     }
-    catch (int errore) {
-        std::cout << "Errore" << std::endl;
+    catch (const std::string& errore) {
+        std::cout << errore << std::endl;
     }
 }
 
